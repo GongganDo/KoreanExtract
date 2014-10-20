@@ -2,18 +2,17 @@ import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import net.caucse.paperlibrary.WordDocument;
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
+import net.caucse.paperlibrary.WordDocument;
+import net.caucse.paperlibrary.WordList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
 
 
 public class RealExtract {
@@ -22,9 +21,10 @@ public class RealExtract {
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
-		GsonBuilder builder = new GsonBuilder();
-		builder.excludeFieldsWithoutExposeAnnotation();
-		Gson gson = builder.create();
+		//GsonBuilder builder = new GsonBuilder();
+		//builder.excludeFieldsWithoutExposeAnnotation();
+		//Gson gson = builder.create();
+		Gson gson = new Gson();
 		
 		komoran = new Komoran("models-light");
 		komoran.addUserDic("word-ilbe.txt");
@@ -54,7 +54,8 @@ public class RealExtract {
 					date = df2.parse(article.getDate());
 				}
 				
-				WordDocument nouns = analyze(str, date);
+				//WordDocument nouns = analyzeDocument(str, date);
+				WordList nouns = analyzeList(str, date);
 				ps.println(gson.toJson(nouns));
 				//ps.println(nouns);
 			}
@@ -67,7 +68,7 @@ public class RealExtract {
 		}
 	}
 	
-	public static WordDocument analyze(String str, Date timestamp) {
+	public static WordDocument analyzeDocument(String str, Date timestamp) {
 		WordDocument wd = new WordDocument(timestamp);
 		
 		@SuppressWarnings("unchecked")
@@ -81,13 +82,34 @@ public class RealExtract {
 					if ("NNP".equals(morph)) {
 						wd.put(word);
 					} else if ("NNG".equals(morph)) {
-						//nouns.putNNG(word);
 						wd.put(word);
 					}
 				}
 			}
 		}
 		return wd;
+	}
+	
+	public static WordList analyzeList(String str, Date timestamp) {
+		WordList wl = new WordList(timestamp);
+		
+		@SuppressWarnings("unchecked")
+		List<List<Pair<String, String>>> result = komoran.analyze(str);
+		
+		for (List<Pair<String, String>> eojeolResult : result) {
+			for (Pair<String, String> wordMorph : eojeolResult) {
+				String word = wordMorph.getFirst().trim();
+				String morph = wordMorph.getSecond();
+				if (word.length() > 1) {
+					if ("NNP".equals(morph)) {
+						wl.put(word);
+					} else if ("NNG".equals(morph)) {
+						wl.put(word);
+					}
+				}
+			}
+		}
+		return wl;
 	}
 
 }
