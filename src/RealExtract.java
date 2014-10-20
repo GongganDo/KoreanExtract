@@ -70,7 +70,7 @@ public class RealExtract {
 		}
 		
 		nc.trim();
-		nc.setTimestamp(timestamp);
+		nc.setTimestamp((int)(timestamp.getTime() / 1000));
 		return nc;
 	}
 
@@ -103,24 +103,24 @@ class Nouns {
 
 class NounCounts {
 	private LinkedList<HashMap<String, Integer>> nouns;
-	private Date timestamp;
+	private int timestamp;
 	private Komoran komoran;
 	
 	public NounCounts() {
 		nouns = new LinkedList<HashMap<String, Integer>>();
 		nouns.add(new HashMap<String, Integer>());
-		timestamp = null;
+		timestamp = 0;
 		
 		komoran = new Komoran("models-light");
 		komoran.addUserDic("word-ilbe.txt");
 		komoran.addUserDic("word-new22.txt");
 	}
 	
-	public void setTimestamp(Date timestamp) {
+	public void setTimestamp(int timestamp) {
 		this.timestamp = timestamp;
 	}
 	
-	public Date getTimestamp() {
+	public int getTimestamp() {
 		return timestamp;
 	}
 	
@@ -178,4 +178,13 @@ class NounCounts {
 			}
 		}
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("NounCounts [nouns=").append(nouns)
+				.append(", timestamp=").append(timestamp).append("]");
+		return builder.toString();
+	}
+	
 }
