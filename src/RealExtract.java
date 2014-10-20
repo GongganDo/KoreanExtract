@@ -4,10 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
@@ -39,7 +37,7 @@ public class RealExtract {
 			SimpleDateFormat df2 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			
 			while ( (article = ar.ReadArticle()) != null) {
-				String str = article.getTitle() + "\n" + article.getContent();
+				String str = article.getTitle() + " " + article.getContent();
 				
 				Date date = null;
 				
@@ -65,16 +63,7 @@ public class RealExtract {
 	public static NounCounts analyze(String str, Date timestamp) {
 		//Nouns nouns = new Nouns();
 		NounCounts nc = new NounCounts();
-		StringTokenizer st = new StringTokenizer(str, "\r\n");
-		
-		while (st.hasMoreTokens()) {
-			String line = st.nextToken().trim();
-			if (line.length() != 0) {
-				nc.analyzeLine(line);
-			}
-		}
-		
-		nc.trim();
+		nc.analyze(str);
 		nc.setTimestamp((int)(timestamp.getTime() / 1000));
 		return nc;
 	}
@@ -108,7 +97,7 @@ class Nouns {
 
 class NounCounts {
 	@Expose
-	private LinkedList<HashMap<String, Integer>> nouns;
+	private HashMap<String, Integer> noun;
 	
 	@Expose
 	private int timestamp;
@@ -116,8 +105,7 @@ class NounCounts {
 	private Komoran komoran;
 	
 	public NounCounts() {
-		nouns = new LinkedList<HashMap<String, Integer>>();
-		nouns.add(new HashMap<String, Integer>());
+		noun = new HashMap<String, Integer>();
 		timestamp = 0;
 		
 		komoran = new Komoran("models-light");
@@ -134,7 +122,6 @@ class NounCounts {
 	}
 	
 	public void putNoun(String word) {
-		HashMap<String, Integer> noun = nouns.getLast();
 		if (noun.containsKey(word)) {
 			noun.put(word, noun.get(word)+1);
 		} else {
@@ -143,16 +130,14 @@ class NounCounts {
 	}
 	
 	public int getNoun(String word) {
-		HashMap<String, Integer> noun = nouns.getLast();
 		return noun.get(word);
 	}
 	
 	public Set<String> keySet() {
-		HashMap<String, Integer> noun = nouns.getLast();
 		return noun.keySet();
 	}
 	
-	public int analyzeLine(String str) {
+	public int analyze(String str) {
 		@SuppressWarnings("unchecked")
 		List<List<Pair<String, String>>> result = komoran.analyze(str);
 		
@@ -172,26 +157,13 @@ class NounCounts {
 			}
 		}
 		
-		int size = nouns.size();
-		nouns.add(new HashMap<String, Integer>());
-		return size;
-	}
-	
-	public void trim() {
-		while (nouns.size() > 0) {
-			HashMap<String, Integer> noun = nouns.getLast();
-			if (noun.isEmpty()) {
-				nouns.removeLast();
-			} else {
-				break;
-			}
-		}
+		return noun.size();
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("NounCounts [nouns=").append(nouns)
+		builder.append("NounCounts [noun=").append(noun)
 				.append(", timestamp=").append(timestamp).append("]");
 		return builder.toString();
 	}
