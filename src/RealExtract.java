@@ -14,7 +14,7 @@ import kr.co.shineware.util.common.model.Pair;
 import com.google.gson.Gson;
 
 
-public class Test {
+public class RealExtract {
 	
 	public static Komoran komoran;
 
