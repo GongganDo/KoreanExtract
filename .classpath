@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="lib/komoran-2.3-e.jar"/>
 	<classpathentry kind="lib" path="lib/shineware-common-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/shineware-ds-1.0.jar"/>
+	<classpathentry kind="lib" path="/PaperLibrary/bin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

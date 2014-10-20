@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import net.caucse.paperlibrary.WordDocument;
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
 
@@ -16,12 +17,18 @@ import com.google.gson.annotations.Expose;
 
 
 public class RealExtract {
+	
+	private static Komoran komoran;
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
 		GsonBuilder builder = new GsonBuilder();
 		builder.excludeFieldsWithoutExposeAnnotation();
 		Gson gson = builder.create();
+		
+		komoran = new Komoran("models-light");
+		komoran.addUserDic("word-ilbe.txt");
+		komoran.addUserDic("word-new22.txt");
 		
 		if (args.length < 2) {
 			System.err.println("[Usage] java article_filename output_filename");
@@ -47,7 +54,7 @@ public class RealExtract {
 					date = df2.parse(article.getDate());
 				}
 				
-				NounCounts nouns = analyze(str, date);
+				WordDocument nouns = analyze(str, date);
 				ps.println(gson.toJson(nouns));
 				//ps.println(nouns);
 			}
@@ -60,12 +67,27 @@ public class RealExtract {
 		}
 	}
 	
-	public static NounCounts analyze(String str, Date timestamp) {
-		//Nouns nouns = new Nouns();
-		NounCounts nc = new NounCounts();
-		nc.analyze(str);
-		nc.setTimestamp((int)(timestamp.getTime() / 1000));
-		return nc;
+	public static WordDocument analyze(String str, Date timestamp) {
+		WordDocument wd = new WordDocument(timestamp);
+		
+		@SuppressWarnings("unchecked")
+		List<List<Pair<String, String>>> result = komoran.analyze(str);
+		
+		for (List<Pair<String, String>> eojeolResult : result) {
+			for (Pair<String, String> wordMorph : eojeolResult) {
+				String word = wordMorph.getFirst().trim();
+				String morph = wordMorph.getSecond();
+				if (word.length() > 1) {
+					if ("NNP".equals(morph)) {
+						wd.put(word);
+					} else if ("NNG".equals(morph)) {
+						//nouns.putNNG(word);
+						wd.put(word);
+					}
+				}
+			}
+		}
+		return wd;
 	}
 
 }
