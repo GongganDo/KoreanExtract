@@ -13,13 +13,17 @@ import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
 
 
 public class RealExtract {
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
-		Gson gson = new Gson();
+		GsonBuilder builder = new GsonBuilder();
+		builder.excludeFieldsWithoutExposeAnnotation();
+		Gson gson = builder.create();
 		
 		if (args.length < 2) {
 			System.err.println("[Usage] java article_filename output_filename");
@@ -54,7 +58,7 @@ public class RealExtract {
 			e.printStackTrace();
 		} finally {
 			time = System.currentTimeMillis() - time;
-			System.err.println(time/3600000 + "h " + time/60000 + "m " + time/1000 + "s");
+			System.err.println(time/3600000 + "h " + time%3600000/60000 + "m " + time%60000/1000 + "s");
 		}
 	}
 	
@@ -103,8 +107,12 @@ class Nouns {
 }
 
 class NounCounts {
+	@Expose
 	private LinkedList<HashMap<String, Integer>> nouns;
+	
+	@Expose
 	private int timestamp;
+	
 	private Komoran komoran;
 	
 	public NounCounts() {
