@@ -1,12 +1,13 @@
 import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
@@ -15,14 +16,9 @@ import com.google.gson.Gson;
 
 
 public class RealExtract {
-	
-	public static Komoran komoran;
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
-		komoran = new Komoran("models-light");
-		komoran.addUserDic("word-ilbe.txt");
-		komoran.addUserDic("word-new22.txt");
 		Gson gson = new Gson();
 		
 		if (args.length < 2) {
@@ -62,28 +58,19 @@ public class RealExtract {
 	}
 	
 	public static NounCounts analyze(String str, Date timestamp) {
-		@SuppressWarnings("unchecked")
-		List<List<Pair<String, String>>> result = komoran.analyze(str);
-		Nouns nouns = new Nouns();
+		//Nouns nouns = new Nouns();
 		NounCounts nc = new NounCounts();
-		nc.setTimestamp(timestamp);
+		StringTokenizer st = new StringTokenizer(str, "\r\n");
 		
-		for (List<Pair<String, String>> eojeolResult : result) {
-			for (Pair<String, String> wordMorph : eojeolResult) {
-				String word = wordMorph.getFirst().trim();
-				String morph = wordMorph.getSecond();
-				if (word.length() > 1) {
-					if ("NNP".equals(morph)) {
-						nouns.putNNP(word);
-						nc.putNoun(word);
-					} else if ("NNG".equals(morph)) {
-						nouns.putNNG(word);
-						nc.putNoun(word);
-					}
-				}
+		while (st.hasMoreTokens()) {
+			String line = st.nextToken().trim();
+			if (line.length() != 0) {
+				nc.analyzeLine(line);
 			}
 		}
 		
+		nc.trim();
+		nc.setTimestamp(timestamp);
 		return nc;
 	}
 
@@ -115,12 +102,18 @@ class Nouns {
 }
 
 class NounCounts {
-	private HashMap<String, Integer> noun;
+	private LinkedList<HashMap<String, Integer>> nouns;
 	private Date timestamp;
+	private Komoran komoran;
 	
 	public NounCounts() {
-		noun = new HashMap<String, Integer>();
+		nouns = new LinkedList<HashMap<String, Integer>>();
+		nouns.add(new HashMap<String, Integer>());
 		timestamp = null;
+		
+		komoran = new Komoran("models-light");
+		komoran.addUserDic("word-ilbe.txt");
+		komoran.addUserDic("word-new22.txt");
 	}
 	
 	public void setTimestamp(Date timestamp) {
@@ -132,6 +125,7 @@ class NounCounts {
 	}
 	
 	public void putNoun(String word) {
+		HashMap<String, Integer> noun = nouns.getLast();
 		if (noun.containsKey(word)) {
 			noun.put(word, noun.get(word)+1);
 		} else {
@@ -140,10 +134,48 @@ class NounCounts {
 	}
 	
 	public int getNoun(String word) {
+		HashMap<String, Integer> noun = nouns.getLast();
 		return noun.get(word);
 	}
 	
 	public Set<String> keySet() {
+		HashMap<String, Integer> noun = nouns.getLast();
 		return noun.keySet();
+	}
+	
+	public int analyzeLine(String str) {
+		@SuppressWarnings("unchecked")
+		List<List<Pair<String, String>>> result = komoran.analyze(str);
+		
+		for (List<Pair<String, String>> eojeolResult : result) {
+			for (Pair<String, String> wordMorph : eojeolResult) {
+				String word = wordMorph.getFirst().trim();
+				//String morph = wordMorph.getSecond();
+				if (word.length() > 1) {
+					//if ("NNP".equals(morph)) {
+						//nouns.putNNP(word);
+						this.putNoun(word);
+					//} else if ("NNG".equals(morph)) {
+						//nouns.putNNG(word);
+					//	nc.putNoun(word);
+					//}
+				}
+			}
+		}
+		
+		int size = nouns.size();
+		nouns.add(new HashMap<String, Integer>());
+		return size;
+	}
+	
+	public void trim() {
+		while (true) {
+			HashMap<String, Integer> noun = nouns.getLast();
+			if (noun.isEmpty()) {
+				nouns.removeLast();
+			} else {
+				break;
+			}
+		}
 	}
 }
