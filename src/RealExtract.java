@@ -47,6 +47,7 @@ public class RealExtract {
 				
 				NounCounts nouns = analyze(str, date);
 				ps.println(gson.toJson(nouns));
+				//ps.println(nouns);
 			}
 			ps.close();
 		} catch (Exception e) {
@@ -150,15 +151,15 @@ class NounCounts {
 		for (List<Pair<String, String>> eojeolResult : result) {
 			for (Pair<String, String> wordMorph : eojeolResult) {
 				String word = wordMorph.getFirst().trim();
-				//String morph = wordMorph.getSecond();
+				String morph = wordMorph.getSecond();
 				if (word.length() > 1) {
-					//if ("NNP".equals(morph)) {
+					if ("NNP".equals(morph)) {
 						//nouns.putNNP(word);
 						this.putNoun(word);
-					//} else if ("NNG".equals(morph)) {
+					} else if ("NNG".equals(morph)) {
 						//nouns.putNNG(word);
 					//	nc.putNoun(word);
-					//}
+					}
 				}
 			}
 		}
@@ -169,7 +170,7 @@ class NounCounts {
 	}
 	
 	public void trim() {
-		while (true) {
+		while (nouns.size() > 0) {
 			HashMap<String, Integer> noun = nouns.getLast();
 			if (noun.isEmpty()) {
 				nouns.removeLast();
