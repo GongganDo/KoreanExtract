@@ -39076,6 +39076,7 @@ Y염색체	NNP
 퍼즐보블	NNP
 퍼크라그	NNP
 퍼트리샤	NNP
+퍼포먼스	NNG
 퍼플레이	NNP
 퍼피레드	NNP
 펀자브어	NNP
@@ -39928,7 +39929,6 @@ Y염색체	NNP
 하인리히	NNP
 하자마역	NNP
 하즈브로	NNP
-하지마라	NNP
 하츠모데	NNP
 하치만역	NNP
 하치온나	NNP
@@ -88072,7 +88072,6 @@ Z이론	NNP
 오리새	NNP
 오리속	NNP
 오리스	NNP
-오리아	NNP
 오리언	NNP
 오리에	NNP
 오리역	NNP
@@ -88446,7 +88445,7 @@ Z이론	NNP
 오예목	NNP
 오예스	NNP
 오오라	NNP
-오오미	NNP
+오오미	IC
 오오쿠	NNP
 오오타	NNP
 오온론	NNP
@@ -93841,7 +93840,7 @@ Z이론	NNP
 응달동	NNP
 응담시	NNP
 응답기	NNP
-응딩이	NNP
+응딩이	NNG
 응량기	NNP
 응룡황	NNP
 응봉동	NNP
@@ -117145,7 +117144,6 @@ Z이론	NNP
 하피냐	NNP
 하피즈	NNP
 하핑야	NNP
-하하하	NNP
 하한담	NNP
 하해웅	NNP
 하현달	NNP
@@ -122659,7 +122657,6 @@ Z이론	NNP
 거인	NNP
 거제	NNP
 거즈	NNP
-거지	NNP
 거진	NNP
 거창	NNP
 거탑	NNP
@@ -124749,6 +124746,7 @@ Z이론	NNP
 꿀벌	NNP
 꿀뷰	NNP
 꿀빵	NNP
+꿀잼	NNG
 꿀풀	NNP
 꿈음	NNP
 꿈조	NNP
@@ -125041,8 +125039,6 @@ Z이론	NNP
 남월	NNP
 남위	NNP
 남융	NNP
-남은	NNP
-남이	NNP
 남인	NNP
 남일	NNP
 남작	NNP
@@ -125362,9 +125358,7 @@ Z이론	NNP
 노엘	NNP
 노역	NNP
 노예	NNP
-노오	NNP
 노와	NNP
-노우	NNP
 노움	NNP
 노원	NNP
 노육	NNP
@@ -125655,7 +125649,6 @@ Z이론	NNP
 니니	NNP
 니덤	NNP
 니데	NNP
-니드	NNP
 니모	NNP
 니미	NNP
 니블	NNP
@@ -128257,7 +128250,6 @@ Z이론	NNP
 마두	NNP
 마등	NNP
 마떼	NNP
-마라	NNP
 마량	NNP
 마렉	NNP
 마력	NNP
@@ -128465,7 +128457,6 @@ Z이론	NNP
 만추	NNP
 만타	NNP
 만포	NNP
-만하	NNP
 만해	NNP
 만행	NNP
 맏이	NNP
@@ -129830,7 +129821,6 @@ Z이론	NNP
 바안	NNP
 바알	NNP
 바얀	NNP
-바에	NNP
 바엘	NNP
 바오	NNP
 바욘	NNP
@@ -130908,7 +130898,6 @@ Z이론	NNP
 보석	NNP
 보성	NNP
 보셀	NNP
-보소	NNP
 보속	NNP
 보손	NNP
 보쉬	NNP
@@ -131175,8 +131164,6 @@ Z이론	NNP
 부련	NNP
 부령	NNP
 부루	NNP
-부리	NNP
-부림	NNP
 부머	NNP
 부바	NNP
 부반	NNP
@@ -134636,7 +134623,6 @@ Z이론	NNP
 신죠	NNP
 신주	NNP
 신죽	NNP
-신지	NNP
 신질	NNP
 신집	NNP
 신징	NNP
@@ -135405,7 +135391,7 @@ Z이론	NNP
 앙광	NNP
 앙금	NNP
 앙리	NNP
-앙망	NNP
+앙망	NNG
 앙시	NNP
 앙앙	NNP
 앙제	NNP
@@ -135733,10 +135719,7 @@ Z이론	NNP
 양웅	NNP
 양원	NNP
 양유	NNP
-양은	NNP
 양읍	NNP
-양의	NNP
-양이	NNP
 양인	NNP
 양임	NNP
 양자	NNP
@@ -136793,7 +136776,6 @@ Z이론	NNP
 오줌	NNP
 오중	NNP
 오즈	NNP
-오지	NNP
 오진	NNP
 오질	NNP
 오차	NNP
@@ -138031,7 +138013,6 @@ Z이론	NNP
 위풍	NNP
 위피	NNP
 위하	NNP
-위해	NNP
 위호	NNP
 위홍	NNP
 위화	NNP
@@ -138082,7 +138063,6 @@ Z이론	NNP
 윙크	NNP
 윙키	NNP
 윙팁	NNP
-유가	NNP
 유각	NNP
 유강	NNP
 유개	NNP
@@ -138821,7 +138801,6 @@ Z이론	NNP
 이색	NNP
 이샘	NNP
 이생	NNP
-이석	NNP
 이선	NNP
 이섬	NNP
 이세	NNP
@@ -138873,7 +138852,6 @@ Z이론	NNP
 이장	NNP
 이재	NNP
 이적	NNP
-이정	NNP
 이족	NNP
 이종	NNP
 이죄	NNP
@@ -140165,7 +140143,6 @@ Z이론	NNP
 제니	NNP
 제다	NNP
 제단	NNP
-제대	NNP
 제더	NNP
 제도	NNP
 제독	NNP
@@ -140446,7 +140423,6 @@ Z이론	NNP
 조희	NNP
 족경	NNP
 족구	NNP
-족도	NNP
 족문	NNP
 족발	NNP
 족보	NNP
@@ -140459,8 +140435,8 @@ Z이론	NNP
 존갈	NNP
 존게	NNP
 존경	NNP
-존나	NNP
-존내	NNP
+존나	MAG
+존내	MAG
 존다	NNP
 존더	NNP
 존론	NNP
@@ -140974,7 +140950,6 @@ Z이론	NNP
 지덕	NNP
 지동	NNP
 지드	NNP
-지라	NNP
 지락	NNP
 지란	NNP
 지량	NNP
@@ -140987,10 +140962,7 @@ Z이론	NNP
 지룽	NNP
 지류	NNP
 지륜	NNP
-지름	NNP
 지릉	NNP
-지리	NNP
-지린	NNP
 지만	NNP
 지맨	NNP
 지멘	NNP
@@ -141445,13 +141417,11 @@ Z이론	NNP
 찡구	NNP
 차개	NNP
 차갤	NNP
-차고	NNP
 차관	NNP
 차급	NNP
 차돌	NNP
 차드	NNP
 차라	NNP
-차려	NNP
 차련	NNP
 차렷	NNP
 차령	NNP
@@ -144614,7 +144584,6 @@ Z이론	NNP
 퍼스	NNP
 퍼즈	NNP
 퍼즐	NNP
-퍼지	NNP
 퍼징	NNP
 퍼커	NNP
 퍼큐	NNP
@@ -145475,7 +145444,6 @@ Z이론	NNP
 하디	NNP
 하딘	NNP
 하딩	NNP
-하라	NNP
 하란	NNP
 하람	NNP
 하랑	NNP
@@ -145557,7 +145525,6 @@ Z이론	NNP
 하주	NNP
 하즈	NNP
 하증	NNP
-하진	NNP
 하찌	NNP
 하청	NNP
 하츠	NNP
@@ -145696,7 +145663,6 @@ Z이론	NNP
 한숭	NNP
 한스	NNP
 한슨	NNP
-한시	NNP
 한신	NNP
 한실	NNP
 한씨	NNP
