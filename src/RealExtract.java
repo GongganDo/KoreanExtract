@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.StringTokenizer;
 
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
@@ -21,10 +22,9 @@ public class RealExtract {
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
-		//GsonBuilder builder = new GsonBuilder();
-		//builder.excludeFieldsWithoutExposeAnnotation();
-		//Gson gson = builder.create();
-		Gson gson = new Gson();
+		GsonBuilder builder = new GsonBuilder();
+		builder.excludeFieldsWithoutExposeAnnotation();
+		Gson gson = builder.create();
 		
 		komoran = new Komoran("models-light");
 		komoran.addUserDic("word-ilbe.txt");
@@ -44,7 +44,7 @@ public class RealExtract {
 			SimpleDateFormat df2 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 			
 			while ( (article = ar.ReadArticle()) != null) {
-				String str = article.getTitle() + " " + article.getContent();
+				String str = article.getTitle() + "\n" + article.getContent();
 				
 				Date date = null;
 				
@@ -91,20 +91,29 @@ public class RealExtract {
 	}
 	
 	public static WordList analyzeList(String str, Date timestamp) {
+		
+		StringTokenizer st = new StringTokenizer(str, "\n");
+		
 		WordList wl = new WordList(timestamp);
 		
-		@SuppressWarnings("unchecked")
-		List<List<Pair<String, String>>> result = komoran.analyze(str);
-		
-		for (List<Pair<String, String>> eojeolResult : result) {
-			for (Pair<String, String> wordMorph : eojeolResult) {
-				String word = wordMorph.getFirst().trim();
-				String morph = wordMorph.getSecond();
-				if (word.length() > 1) {
-					if ("NNP".equals(morph)) {
-						wl.put(word);
-					} else if ("NNG".equals(morph)) {
-						wl.put(word);
+		while (st.hasMoreTokens()) {
+			String line = st.nextToken();
+			if (line.trim().length() == 0) continue;
+			
+			@SuppressWarnings("unchecked")
+			List<List<Pair<String, String>>> result = komoran.analyze(line);
+			
+			wl.newLine();
+			for (List<Pair<String, String>> eojeolResult : result) {
+				for (Pair<String, String> wordMorph : eojeolResult) {
+					String word = wordMorph.getFirst().trim();
+					String morph = wordMorph.getSecond();
+					if (word.length() > 1) {
+						if ("NNP".equals(morph)) {
+							wl.put(word);
+						} else if ("NNG".equals(morph)) {
+							wl.put(word);
+						}
 					}
 				}
 			}
