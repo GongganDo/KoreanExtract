@@ -25,7 +25,7 @@ public class Extract {
 		analyzer = new Komoran("models-light/");
 		//analyzer.setUserDic("komoran_data/word.txt");
 		analyzer.setUserDic("word-ilbe.txt");
-		analyzer.setUserDic("word-new21.txt");
+		analyzer.setUserDic("word-new22.txt");
 		checkList = new ArrayList<String>();
 		Collections.addAll(checkList, filter);
 		
