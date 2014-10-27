@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 
 public class KoreanExtract {
 	
-	private static final String WORD_DATAPATH = "models_full/";
+	private static final String WORD_DATAPATH = "models_light/";
 	//private static final String WORD_USERDICNAME = "word.txt";
 	
 	private Komoran analyzer = null;
@@ -31,6 +31,8 @@ public class KoreanExtract {
 	
 	{
 		analyzer = new Komoran(WORD_DATAPATH);
+		analyzer.setUserDic("word-ilbe.txt");
+		analyzer.setUserDic("word-new22.txt");
 		//analyzer.setUserDic(WORD_DATAPATH + WORD_USERDICNAME);
 	}
 	
@@ -98,8 +100,8 @@ public class KoreanExtract {
 					}
 				}
 				
-				final String[] equalsString = new String[] { "NNG", "NNP", "SH", "SL", "SN" };
-				//final String[] equalsString = new String[] { "NNG", "NNP" };
+				//final String[] equalsString = new String[] { "NNG", "NNP", "SH", "SL", "SN" };
+				final String[] equalsString = new String[] { "NNG", "NNP" };
 				
 				for (Pair<String, String> wordMorph : eojeolResult) {
 					first = wordMorph.getFirst();
@@ -134,16 +136,17 @@ public class KoreanExtract {
 	
 
 	public static void main(String[] args) {
+		long time = System.currentTimeMillis();
 		Gson gson = new Gson();
 		DateFormat dfIn = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 		DateFormat dfOut = new SimpleDateFormat("MMdd");
 		HashMap<String, HashMap<String, Integer>> data = new HashMap<String, HashMap<String, Integer>>();
 		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("ilbe-text-all"));
-			PrintWriter pww = new PrintWriter("ver3.0_Filtered");
+			BufferedReader br = new BufferedReader(new FileReader("ilbe-text-all-0827-1026"));
+			//PrintWriter pww = new PrintWriter("ver4.0_Filtered");
 			String st;
-			int cnt = 0;
+			//int cnt = 0;
 			while ((st = br.readLine()) != null) {
 			
 				Article article = (Article)gson.fromJson(st, Article.class);
@@ -179,16 +182,16 @@ public class KoreanExtract {
 					}
 				}
 				article.setContent(sbb.toString().trim());
-				System.err.println(cnt++);
-				pww.println(gson.toJson(article));
+				//System.err.println(cnt++);
+				//pww.println(gson.toJson(article));
 			}
 			br.close(); // end: 18342
-			pww.close();
-			/*
+			//pww.close();
+			
 			String[] dtKeys = data.keySet().toArray(new String[0]);
 			Arrays.sort(dtKeys);
 			
-			PrintWriter pw = new PrintWriter("ver2.0_Filtered");
+			PrintWriter pw = new PrintWriter("ver4.0_Filtered");
 			
 			for (String dtKey : dtKeys) {
 				
@@ -196,7 +199,7 @@ public class KoreanExtract {
 				Arrays.sort(wdKeys);
 				
 				for (String key : wdKeys) {
-					if (key.length() >= 2 && key.matches("[가-힣]+")) {
+					if (key.length() >= 2) {
 						StringBuilder sb = new StringBuilder();
 						sb.append(dtKey)
 						  .append('\t')
@@ -207,9 +210,12 @@ public class KoreanExtract {
 					}
 				}
 			}
-			pw.close();*/
+			pw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			time = System.currentTimeMillis() - time;
+			System.err.println(time/3600000 + ":" + time%3600000/60000 + ":" + time%60000/1000 + "s");
 		}
 	}
 }
