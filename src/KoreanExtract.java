@@ -167,21 +167,21 @@ public class KoreanExtract {
 					data.put(dtStr, hm);
 				}
 				
-				StringBuilder sbb = new StringBuilder();
+				//StringBuilder sbb = new StringBuilder();
 				
 				for (String key : map.keySet()) {
-					/*if (hm.containsKey(key)) {
+					if (hm.containsKey(key)) {
 						hm.put(key, hm.get(key)+1);
 					} else {
 						hm.put(key, 1);
-					}*/
+					}
 					
-					if (key.length() >= 2) {
+					/*if (key.length() >= 2) {
 						sbb.append(key);
 						sbb.append(" ");
-					}
+					}*/
 				}
-				article.setContent(sbb.toString().trim());
+				//article.setContent(sbb.toString().trim());
 				//System.err.println(cnt++);
 				//pww.println(gson.toJson(article));
 			}
