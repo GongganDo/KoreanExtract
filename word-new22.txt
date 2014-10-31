@@ -11418,7 +11418,6 @@ YTN웨더	NNP
 맘모스조드	NNP
 맛있는라면	NNP
 망상대리인	NNP
-망설이지마	NNP
 망원경자리	NNP
 망원조준경	NNP
 매가테리움	NNP
@@ -62426,7 +62425,6 @@ Z이론	NNP
 망상역	NNP
 망석중	NNP
 망석항	NNP
-망설임	NNP
 망성면	NNP
 망시민	NNP
 망아장	NNP
@@ -128538,7 +128536,6 @@ Z이론	NNP
 망법	NNP
 망붕	NNP
 망상	NNP
-망설	NNP
 망슈	NNP
 망식	NNP
 망어	NNP
