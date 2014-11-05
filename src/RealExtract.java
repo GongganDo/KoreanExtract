@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.StringTokenizer;
 
 import kr.co.shineware.nlp.komoran.core.analyzer.Komoran;
 import kr.co.shineware.util.common.model.Pair;
@@ -95,12 +94,11 @@ public class RealExtract {
 	
 	public static WordList analyzeList(String str, Date timestamp) {
 		
-		StringTokenizer st = new StringTokenizer(str, "\n");
+		String[] lines = str.split("\n");
 		
 		WordList wl = new WordList(timestamp);
 		
-		while (st.hasMoreTokens()) {
-			String line = st.nextToken();
+		for (String line : lines) {
 			if (line.trim().length() == 0) continue;
 			
 			@SuppressWarnings("unchecked")
