@@ -22078,6 +22078,7 @@ Y염색체	NNP
 기타도라	NNP
 기타지마	NNP
 기타큐슈	NNP
+기프티콘	NNG
 기하시티	NNP
 기합구슬	NNP
 기합회피	NNP
@@ -80673,7 +80674,6 @@ Z이론	NNP
 신경숙	NNP
 신경시	NNP
 신경식	NNP
-신경안	NNP
 신경준	NNP
 신경증	NNP
 신경진	NNP
@@ -88282,7 +88282,6 @@ Z이론	NNP
 오세르	NNP
 오세미	NNP
 오세민	NNP
-오세아	NNP
 오세암	NNP
 오세영	NNP
 오세윤	NNP
@@ -88544,7 +88543,6 @@ Z이론	NNP
 오잉고	NNP
 오자란	NNP
 오자룡	NNP
-오자마	NNP
 오자복	NNP
 오자봉	NNP
 오자서	NNP
@@ -109721,7 +109719,6 @@ Z이론	NNP
 카리대	NNP
 카리바	NNP
 카리브	NNP
-카리스	NNP
 카리아	NNP
 카리안	NNP
 카리오	NNP
@@ -122395,7 +122392,6 @@ Z이론	NNP
 갑오	NNP
 갑옷	NNP
 갑을	NNP
-갑인	NNP
 갑자	NNP
 갑지	NNP
 갑진	NNP
@@ -122722,7 +122718,6 @@ Z이론	NNP
 건희	NNP
 걸데	NNP
 걸레	NNP
-걸리	NNP
 걸뽀	NNP
 걸사	NNP
 걸상	NNP
@@ -123625,7 +123620,6 @@ Z이론	NNP
 관위	NNP
 관윤	NNP
 관음	NNP
-관이	NNP
 관인	NNP
 관자	NNP
 관장	NNP
@@ -123977,7 +123971,6 @@ Z이론	NNP
 국악	NNP
 국연	NNP
 국외	NNP
-국의	NNP
 국자	NNP
 국장	NNP
 국전	NNP
@@ -124402,7 +124395,6 @@ Z이론	NNP
 기독	NNP
 기동	NNP
 기드	NNP
-기라	NNP
 기란	NNP
 기령	NNP
 기뢰	NNP
@@ -124676,7 +124668,6 @@ Z이론	NNP
 깡법	NNP
 깡통	NNP
 깨꽃	NNP
-깨나	NNP
 깨미	NNP
 깨침	NNP
 깨풀	NNP
@@ -125362,7 +125353,6 @@ Z이론	NNP
 노육	NNP
 노을	NNP
 노음	NNP
-노이	NNP
 노잉	NNP
 노자	NNP
 노장	NNP
@@ -126148,7 +126138,6 @@ Z이론	NNP
 대한	NNP
 대함	NNP
 대합	NNP
-대해	NNP
 대행	NNP
 대헌	NNP
 대현	NNP
@@ -126899,10 +126888,7 @@ Z이론	NNP
 등애	NNP
 등약	NNP
 등양	NNP
-등에	NNP
 등유	NNP
-등은	NNP
-등의	NNP
 등자	NNP
 등절	NNP
 등제	NNP
@@ -127162,7 +127148,6 @@ Z이론	NNP
 라웅	NNP
 라유	NNP
 라윤	NNP
-라이	NNP
 라일	NNP
 라임	NNP
 라쟌	NNP
@@ -127396,7 +127381,6 @@ Z이론	NNP
 레녹	NNP
 레논	NNP
 레늄	NNP
-레니	NNP
 레닌	NNP
 레님	NNP
 레다	NNP
@@ -127670,7 +127654,6 @@ Z이론	NNP
 로프	NNP
 로핀	NNP
 로하	NNP
-로한	NNP
 로화	NNP
 로후	NNP
 록맨	NNP
@@ -127963,7 +127946,6 @@ Z이론	NNP
 륙군	NNP
 륙색	NNP
 륭센	NNP
-르고	NNP
 르귄	NNP
 르그	NNP
 르낭	NNP
@@ -128045,7 +128027,6 @@ Z이론	NNP
 리심	NNP
 리쌍	NNP
 리아	NNP
-리안	NNP
 리알	NNP
 리암	NNP
 리야	NNP
@@ -128323,11 +128304,7 @@ Z이론	NNP
 마육	NNP
 마융	NNP
 마은	NNP
-마의	NNP
-마인	NNP
-마일	NNP
 마임	NNP
-마자	NNP
 마작	NNP
 마장	NNP
 마쟈	NNP
@@ -129148,7 +129125,6 @@ Z이론	NNP
 못피	NNP
 몽강	NNP
 몽고	NNP
-몽골	NNP
 몽구	NNP
 몽굴	NNP
 몽꿋	NNP
@@ -130142,7 +130118,6 @@ Z이론	NNP
 방일	NNP
 방장	NNP
 방재	NNP
-방적	NNP
 방전	NNP
 방점	NNP
 방중	NNP
@@ -130174,7 +130149,6 @@ Z이론	NNP
 배동	NNP
 배드	NNP
 배란	NNP
-배랑	NNP
 배럭	NNP
 배럴	NNP
 배럿	NNP
@@ -131294,7 +131268,6 @@ Z이론	NNP
 북조	NNP
 북종	NNP
 북주	NNP
-북중	NNP
 북청	NNP
 북퀴	NNP
 북평	NNP
@@ -131597,7 +131570,6 @@ Z이론	NNP
 비신	NNP
 비아	NNP
 비악	NNP
-비야	NNP
 비언	NNP
 비엔	NNP
 비엘	NNP
@@ -131630,7 +131602,6 @@ Z이론	NNP
 비점	NNP
 비제	NNP
 비조	NNP
-비주	NNP
 비준	NNP
 비쥬	NNP
 비즈	NNP
@@ -131907,7 +131878,6 @@ Z이론	NNP
 사독	NNP
 사동	NNP
 사두	NNP
-사드	NNP
 사득	NNP
 사디	NNP
 사땅	NNP
@@ -131918,7 +131888,6 @@ Z이론	NNP
 사랍	NNP
 사량	NNP
 사레	NNP
-사령	NNP
 사롱	NNP
 사료	NNP
 사루	NNP
@@ -131988,8 +131957,6 @@ Z이론	NNP
 사연	NNP
 사염	NNP
 사예	NNP
-사와	NNP
-사요	NNP
 사우	NNP
 사울	NNP
 사움	NNP
@@ -132656,7 +132623,6 @@ Z이론	NNP
 서빈	NNP
 서산	NNP
 서상	NNP
-서서	NNP
 서선	NNP
 서성	NNP
 서솜	NNP
@@ -132856,7 +132822,6 @@ Z이론	NNP
 선웅	NNP
 선위	NNP
 선율	NNP
-선의	NNP
 선인	NNP
 선정	NNP
 선제	NNP
@@ -133148,7 +133113,6 @@ Z이론	NNP
 세법	NNP
 세부	NNP
 세븐	NNP
-세비	NNP
 세빗	NNP
 세속	NNP
 세슘	NNP
@@ -133185,7 +133149,6 @@ Z이론	NNP
 세티	NNP
 세팡	NNP
 세포	NNP
-세한	NNP
 세훈	NNP
 섹검	NNP
 섹서	NNP
@@ -134399,7 +134362,6 @@ Z이론	NNP
 시시	NNP
 시신	NNP
 시씨	NNP
-시아	NNP
 시안	NNP
 시알	NNP
 시암	NNP
@@ -134456,8 +134418,6 @@ Z이론	NNP
 시퀄	NNP
 시크	NNP
 시클	NNP
-시키	NNP
-시킴	NNP
 시타	NNP
 시택	NNP
 시티	NNP
@@ -135154,7 +135114,6 @@ Z이론	NNP
 악혜	NNP
 악환	NNP
 악흑	NNP
-안가	NNP
 안강	NNP
 안거	NNP
 안검	NNP
@@ -135768,7 +135727,6 @@ Z이론	NNP
 양흔	NNP
 양흥	NNP
 어간	NNP
-어강	NNP
 어겐	NNP
 어구	NNP
 어군	NNP
@@ -135900,7 +135858,6 @@ Z이론	NNP
 업힐	NNP
 엇각	NNP
 엇쨩	NNP
-에가	NNP
 에결	NNP
 에고	NNP
 에그	NNP
@@ -136213,7 +136170,6 @@ Z이론	NNP
 여통	NNP
 여패	NNP
 여포	NNP
-여해	NNP
 여핵	NNP
 여헌	NNP
 여화	NNP
@@ -137228,8 +137184,6 @@ Z이론	NNP
 외채	NNP
 외처	NNP
 외척	NNP
-외치	NNP
-외칠	NNP
 외커	NNP
 외탄	NNP
 외투	NNP
@@ -138705,7 +138659,6 @@ Z이론	NNP
 의치	NNP
 의침	NNP
 의태	NNP
-의해	NNP
 의현	NNP
 의형	NNP
 의혹	NNP
@@ -139006,7 +138959,6 @@ Z이론	NNP
 인중	NNP
 인즈	NNP
 인증	NNP
-인지	NNP
 인질	NNP
 인처	NNP
 인촌	NNP
@@ -139125,7 +139077,6 @@ Z이론	NNP
 임정	NNP
 임제	NNP
 임준	NNP
-임진	NNP
 임질	NNP
 임창	NNP
 임천	NNP
@@ -139461,7 +139412,6 @@ Z이론	NNP
 장님	NNP
 장닝	NNP
 장다	NNP
-장단	NNP
 장달	NNP
 장담	NNP
 장덕	NNP
@@ -140053,11 +140003,8 @@ Z이론	NNP
 정유	NNP
 정윤	NNP
 정은	NNP
-정을	NNP
 정음	NNP
 정읍	NNP
-정의	NNP
-정이	NNP
 정익	NNP
 정인	NNP
 정자	NNP
@@ -140344,7 +140291,6 @@ Z이론	NNP
 조양	NNP
 조어	NNP
 조엄	NNP
-조에	NNP
 조엘	NNP
 조여	NNP
 조예	NNP
@@ -140698,7 +140644,6 @@ Z이론	NNP
 주폭	NNP
 주표	NNP
 주필	NNP
-주하	NNP
 주해	NNP
 주현	NNP
 주호	NNP
@@ -141417,8 +141362,6 @@ Z이론	NNP
 차관	NNP
 차급	NNP
 차돌	NNP
-차드	NNP
-차라	NNP
 차련	NNP
 차렷	NNP
 차령	NNP
@@ -145611,9 +145554,6 @@ Z이론	NNP
 한냐	NNP
 한농	NNP
 한닌	NNP
-한단	NNP
-한당	NNP
-한대	NNP
 한덕	NNP
 한도	NNP
 한독	NNP
@@ -145688,7 +145628,6 @@ Z이론	NNP
 한전	NNP
 한정	NNP
 한젠	NNP
-한조	NNP
 한족	NNP
 한종	NNP
 한주	NNP
