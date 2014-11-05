@@ -1,6 +1,7 @@
 import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -90,6 +91,8 @@ public class RealExtract {
 		return wd;
 	}
 	
+	private static String[] morphList = new String[] {"MAG", "NNG", "NNP", "VA", "VV"};
+	
 	public static WordList analyzeList(String str, Date timestamp) {
 		
 		StringTokenizer st = new StringTokenizer(str, "\n");
@@ -109,9 +112,7 @@ public class RealExtract {
 					String word = wordMorph.getFirst().trim();
 					String morph = wordMorph.getSecond();
 					if (word.length() > 1) {
-						if ("NNP".equals(morph)) {
-							wl.put(word);
-						} else if ("NNG".equals(morph)) {
+						if (Arrays.binarySearch(morphList, morph) > 0) {
 							wl.put(word);
 						}
 					}
