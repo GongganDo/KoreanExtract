@@ -25,7 +25,7 @@ public class StringExtract {
 	 * @param text 분석할 한국어 텍스트
 	 */
 	public StringExtract(String text) {
-		this.komoran = new Komoran("models_light");
+		this.komoran = new Komoran("models-light");
 		this.text = text;
 	}
 	
