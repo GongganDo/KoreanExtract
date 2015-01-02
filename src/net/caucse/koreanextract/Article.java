@@ -1,3 +1,4 @@
+package net.caucse.koreanextract;
 
 public class Article {
 	private String name;

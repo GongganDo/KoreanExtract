@@ -1,3 +1,4 @@
+package net.caucse.koreanextract;
 import java.io.PrintStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
